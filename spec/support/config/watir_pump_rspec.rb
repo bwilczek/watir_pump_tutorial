@@ -4,7 +4,7 @@ require 'watir_pump'
 require_relative '../helpers/sinatra_helper'
 
 RSpec.configure do |config|
-  config.define_derived_metadata(file_path: %r{/spec/(demo|tutorial)/}) do |meta|
+  config.define_derived_metadata(file_path: %r{/spec/}) do |meta|
     meta[:aggregate_failures] = true
     meta[:watir] = true
   end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'config/watir_pump_rspec'
+require_relative 'support/config/watir_pump_rspec'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
