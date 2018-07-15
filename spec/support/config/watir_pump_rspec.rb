@@ -6,7 +6,6 @@ require_relative '../helpers/sinatra_helper'
 RSpec.configure do |config|
   config.define_derived_metadata(file_path: %r{/spec/}) do |meta|
     meta[:aggregate_failures] = true
-    meta[:watir] = true
   end
 
   config.before(:suite) do
@@ -23,7 +22,7 @@ RSpec.configure do |config|
     WatirPump.config.current_example = example
   end
 
-  config.after(:each, watir: true) do
+  config.after(:each) do
     WatirPump.config.browser.cookies.clear
     WatirPump.config.browser.goto('about:blank')
   end

@@ -1,0 +1,24 @@
+body{
+  /* font-family: "Trebuchet MS", sans-serif; */
+  margin: 20px;
+}
+
+a[role="rm"] {
+  font-size: smaller;
+  cursor: pointer;
+  color: #a22;
+  margin-left: 5px;
+}
+
+div[role="todo_list"] {
+  display: none;
+  float: left;
+  margin: 20px;
+  width: 270px;
+}
+
+.start_hidden {
+  display: none;
+}
+
+.clearBoth { clear:both; }

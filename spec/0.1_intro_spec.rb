@@ -2,13 +2,13 @@
 
 class IndexPage < WatirPump::Page
   uri '/index.html'
-  h1_reader :header
+  h1 :header
 end
 
 RSpec.describe IndexPage do
   it 'displays header' do
     IndexPage.open do
-      expect(header).to eq 'Welcome to WatirPump tutorial'
+      expect(header.text).to eq 'Welcome to WatirPump tutorial'
     end
   end
 end
