@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="us">
+<head>
+  <meta charset="utf-8">
+  <title>ToDo lists</title>
+  <link href="jquery-ui.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <a href="index.html">index page</a>
+  <hr />
+
+  <div id="todos_home" role="todo_list">
+    <div role="title">Home</div>
+    <input role="new_item" /><button role="add">Add</button>
+    <ul>
+      <li><span role="name">Dishes</span><a role="rm">[rm]</a></li>
+      <li><span role="name">Laundry</span><a role="rm">[rm]</a></li>
+      <li><span role="name">Vacuum</span><a role="rm">[rm]</a></li>
+    </ul>
+  </div>
+
+  <div id="todos_work" role="todo_list">
+    <div role="title">Work</div>
+    <input role="new_item" /><button role="add">Add</button>
+    <ul>
+      <li><span role="name">Review the PR-1234</span><a role="rm">[rm]</a></li>
+      <li><span role="name">Generate coverage report</span><a role="rm">[rm]</a></li>
+      <li><span role="name">Update README.md</span><a role="rm">[rm]</a></li>
+    </ul>
+  </div>
+
+  <div id="todos_groceries" role="todo_list">
+    <div role="title">Groceries</div>
+    <input role="new_item" /><button role="add">Add</button>
+    <ul>
+      <li><span role="name">Bread</span><a role="rm">[rm]</a></li>
+      <li><span role="name">Tomatos</span><a role="rm">[rm]</a></li>
+      <li><span role="name">Green pesto</span><a role="rm">[rm]</a></li>
+    </ul>
+  </div>
+
+  <br class="clearBoth" />
+
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
