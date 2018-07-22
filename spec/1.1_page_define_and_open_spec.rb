@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 
-# First: declare the class for page under test (index.html)
+# Step 1: declare the class for page under test (index.html)
 class IndexPage < WatirPump::Page
   # *REQUIRED*: URI of this page, relative to WatirPump.config.base_url
   uri '/index.html'
 
-  # list of relevant elements, in this example we care only about the top header
-  # more information about elements will come in the following chapters
+  # List of page elements, that we wish to interact with.
+  # In this example we care only about the top header (the first `h1` found)
   h1 :header
+  # More information about elements will come in the following chapters
 end
 
-# Then create a spec for it
+# Step 2: create a spec for it
 RSpec.describe IndexPage do
   it 'displays header' do
     # Once page class is defined use a class method `open` to interact with it.

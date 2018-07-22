@@ -19,7 +19,7 @@ for more comprehensive documentation on the API.
 
 #### 1.1 Define a page and open it
 
-[spec: 1.1_page_define_and_open_spec.rb](spec/1.1_page_define_and_open_spec.rb)
+[see the spec](spec/1.1_page_define_and_open_spec.rb)
 
 #### 1.2 Navigate between two pages
 
