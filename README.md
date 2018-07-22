@@ -3,7 +3,7 @@
 ## Page Object pattern with `WatirPump`: how to create and run tests
 
 The goal of this repo is to familiarize web developers with features of `WatirPump` -
-a new PageObject library for Ruby/Watir. Each section of this tutorial
+a new PageObject library for [Watir](https://www.rubydoc.info/gems/watir/). Each section of this tutorial
 covers another feature of `WatirPump`, gradually increasing the complexity.
 Each one consists of a brief description and an example test (`rspec`).
 
@@ -18,6 +18,8 @@ for more comprehensive documentation on the API.
 ### 1. Pages
 
 #### 1.1 Define a page and open it
+
+[spec: 1.1_page_define_and_open_spec.rb](spec/1.1_page_define_and_open_spec.rb)
 
 #### 1.2 Navigate between two pages
 
