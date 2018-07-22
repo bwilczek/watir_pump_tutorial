@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# First: declare the class for page under test (index.html)
 class IndexPage < WatirPump::Page
   # *REQUIRED*: URI of this page, relative to WatirPump.config.base_url
   uri '/index.html'
@@ -9,11 +10,11 @@ class IndexPage < WatirPump::Page
   h1 :header
 end
 
+# Then create a spec for it
 RSpec.describe IndexPage do
   it 'displays header' do
-    # once page class is defined use a class method `open` to interact with it
-    # the declared elements (here: `header`) are available
-    # in the block passed to `open`
+    # Once page class is defined use a class method `open` to interact with it.
+    # The declared elements (here: `header`) are available in the block passed to `open`.
     IndexPage.open do
       expect(header).to be_instance_of Watir::Heading
       expect(header.text).to eq 'Welcome to WatirPump tutorial'
