@@ -27,7 +27,7 @@ for more comprehensive documentation on the API.
 
 #### 1.3 Declare custom condition for page being loaded
 
-[see the spec](spec/1.3_custom_loaded_condition_spec)
+[see the spec](spec/1.3_custom_loaded_condition_spec.rb)
 
 #### 1.4 Parametrize URI
 
