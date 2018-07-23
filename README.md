@@ -27,6 +27,8 @@ for more comprehensive documentation on the API.
 
 #### 1.3 Declare custom condition for page being loaded
 
+[see the spec](spec/1.3_custom_loaded_condition_spec)
+
 #### 1.4 Parametrize URI
 
 WatirPump internally uses [addressable](https://github.com/sporkmonger/addressable) gem to support URL parametrization.
@@ -68,5 +70,3 @@ WatirPump internally uses [addressable](https://github.com/sporkmonger/addressab
 #### 5.1 Inheritance
 
 #### 5.2 `query` macro
-
-#### 5.2 `browser` reference

@@ -13,12 +13,37 @@ end
 
 # Step 2: create a spec for it
 RSpec.describe IndexPage do
-  it 'displays header' do
+  it 'displays header element' do
     # Once page class is defined use a class method `open` to interact with it.
     # The declared elements (here: `header`) are available in the block passed to `open`.
     IndexPage.open do
       expect(header).to be_instance_of Watir::Heading
       expect(header.text).to eq 'Welcome to WatirPump tutorial'
+    end
+  end
+
+  # Page instance contains not only elements explicity declared in class definition.
+  # It also provides references to browser instance, and the root element in the DOM tree.
+  # All elements declared in class definition are being located relatively to this root.
+  # For Pages root always points to `body` element.
+  # In the following chapters, when Components are introduced, this term will gain more significance.
+  it 'demonstrates Page instance API' do
+    IndexPage.open do
+      # self.browser is a reference to Watir::Browser instance assosciated with current session.
+      # @see https://www.rubydoc.info/gems/watir/Watir/Browser
+      expect(browser).to be_instance_of Watir::Browser
+      expect(browser.title).to include 'WatirPump'
+
+      # Examine the lines below to learn how the element declaration in line 10 (`h1 :header`)
+      # relates to Watir API for querying the DOM tree
+      expect(root).to eq browser.body
+      expect(root).to be_kind_of Watir::Body
+      expect(root.h1).to eq header
+      expect(browser.body.h1).to eq header
+
+      # loaded? is always truthy here: this block would not execute if page was not loaded.
+      # See chapter 1.3 to learn how to create custom criteria for page being loaded.
+      expect(loaded?).to be_truthy
     end
   end
 end
