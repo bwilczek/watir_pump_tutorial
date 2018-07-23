@@ -27,6 +27,10 @@ for more comprehensive documentation on the API.
 
 #### 1.4 Parametrize URI
 
+WatirPump internally uses [addressable](https://github.com/sporkmonger/addressable) gem to support URL parametrization.
+
+[see the spec](spec/1.4_parametrize_uri_spec.rb)
+
 ### 2. Elements
 
 #### 2.1 Locate using Watir methods
