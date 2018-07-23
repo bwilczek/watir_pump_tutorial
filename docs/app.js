@@ -46,3 +46,37 @@ $(function() {
 
   $('a[role="rm"]').click(rmTodoItem)
 });
+
+function getUrlParams(url) {
+  // http://stackoverflow.com/a/23946023/2407309
+  if (typeof url == 'undefined') {
+    url = window.location.search
+  }
+  url = url.split('#')[0] // Discard fragment identifier.
+  let urlParams = {}
+  let queryString = url.split('?')[1]
+  if (!queryString) {
+    if (url.search('=') !== false) {
+      queryString = url
+    }
+  }
+  if (queryString) {
+    let keyValuePairs = queryString.split('&')
+    for (let i = 0; i < keyValuePairs.length; i++) {
+      let keyValuePair = keyValuePairs[i].split('=')
+      let paramName = keyValuePair[0]
+      let paramValue = keyValuePair[1] || ''
+      urlParams[paramName] = decodeURIComponent(paramValue.replace(/\+/g, ' '))
+    }
+  }
+  return urlParams
+}
+
+function displayUrlParams() {
+  let params = getUrlParams()
+  let k, v
+  for(k in params) {
+    v = params[k]
+    $('#url-params').append($(`<li>${k}: ${v}</li>`))
+  }
+}

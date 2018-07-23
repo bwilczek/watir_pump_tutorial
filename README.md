@@ -12,7 +12,7 @@ They are being served through GitHub Pages under [this link](https://bwilczek.gi
 For the sake of local `rspec` execution `sinatra` server is being spin up to
 serves these pages faster and without the necessity of being online.
 
-Please refer to gem's [README](https://github.com/bwilczek/watir_pump)
+Please refer to WatirPump's [README](https://github.com/bwilczek/watir_pump)
 for more comprehensive documentation on the API.
 
 ### 1. Pages
@@ -25,9 +25,11 @@ for more comprehensive documentation on the API.
 
 #### 1.3 Declare custom condition for page being loaded
 
+#### 1.4 Parametrize URI
+
 ### 2. Elements
 
-#### 2.1 Locate using the Watir way
+#### 2.1 Locate using Watir methods
 
 #### 2.2 Locate using a lambda expression
 
@@ -60,3 +62,5 @@ for more comprehensive documentation on the API.
 #### 5.1 Inheritance
 
 #### 5.2 `query` macro
+
+#### 5.2 `browser` reference
