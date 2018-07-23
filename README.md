@@ -23,6 +23,8 @@ for more comprehensive documentation on the API.
 
 #### 1.2 Navigate between two pages
 
+[see the spec](spec/1.2_navigation_between_two_pages_spec.rb)
+
 #### 1.3 Declare custom condition for page being loaded
 
 #### 1.4 Parametrize URI
