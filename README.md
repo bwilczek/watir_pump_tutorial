@@ -35,11 +35,17 @@ WatirPump internally uses [addressable](https://github.com/sporkmonger/addressab
 
 [see the spec](spec/1.4_parametrize_uri_spec.rb)
 
+#### 1.5 Inheritance
+
 ### 2. Elements
 
 #### 2.1 Locate using Watir methods
 
+[see the spec](spec/2.1_locate_using_watir_methods_spec.rb)
+
 #### 2.2 Locate using a lambda expression
+
+[see the spec](spec/2.2_locate_using_lambda_spec.rb)
 
 #### 2.3 Collection of elements
 
@@ -48,6 +54,8 @@ WatirPump internally uses [addressable](https://github.com/sporkmonger/addressab
 #### 2.5 Action macros: clicker
 
 #### 2.6 Action macros: writer
+
+#### 2.7 `query` class macro
 
 ### 3. Forms
 
@@ -64,9 +72,3 @@ WatirPump internally uses [addressable](https://github.com/sporkmonger/addressab
 #### 4.2 Nesting
 
 #### 4.3 Collection of components
-
-### 5. Other features
-
-#### 5.1 Inheritance
-
-#### 5.2 `query` macro
