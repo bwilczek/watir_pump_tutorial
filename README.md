@@ -61,9 +61,9 @@ WatirPump internally uses [addressable](https://github.com/sporkmonger/addressab
 
 #### 4.1 Define a component class and locate it on a page
 
-#### 4.1 Nesting
+#### 4.2 Nesting
 
-#### 4.2 Collection of components
+#### 4.3 Collection of components
 
 ### 5. Other features
 

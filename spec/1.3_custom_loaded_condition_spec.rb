@@ -2,7 +2,7 @@
 
 class IndexPage < WatirPump::Page
   uri '/index.html'
-  a :slow_greeter_link, href: 'greeter.html?random_delay=1'
+  link :slow_greeter_link, href: 'greeter.html?random_delay=1'
 end
 
 # This greeter page shows it's content after a random delay.
@@ -20,7 +20,7 @@ class FixedSlowGreeterPage < WatirPump::Page
   h1 :header
 
   def loaded?
-    header.visible?
+    header.present?
   end
 end
 

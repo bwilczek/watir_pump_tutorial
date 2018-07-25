@@ -4,7 +4,7 @@ class IndexPage < WatirPump::Page
   uri '/index.html'
 
   # Declare a link to another page
-  a :greeter_link, href: 'greeter.html'
+  link :greeter_link, href: 'greeter.html'
 end
 
 class GreeterPage < WatirPump::Page

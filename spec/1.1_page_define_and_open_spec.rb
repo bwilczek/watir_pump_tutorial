@@ -25,7 +25,7 @@ RSpec.describe IndexPage do
   # Page instance contains not only elements explicity declared in class definition.
   # It also provides references to browser instance, and the root element in the DOM tree.
   # All elements declared in class definition are being located relatively to this root.
-  # For Pages root always points to `body` element.
+  # For Pages root always points to `browser` reference.
   # In the following chapters, when Components are introduced, this term will gain more significance.
   it 'demonstrates Page instance API' do
     IndexPage.open do
@@ -36,8 +36,8 @@ RSpec.describe IndexPage do
 
       # Examine the lines below to learn how the element declaration in line 10 (`h1 :header`)
       # relates to Watir API for querying the DOM tree
-      expect(root).to eq browser.body
-      expect(root).to be_kind_of Watir::Body
+      expect(root).to eq browser
+      expect(root.body).to be_kind_of Watir::Body
       expect(root.h1).to eq header
       expect(browser.body.h1).to eq header
 
