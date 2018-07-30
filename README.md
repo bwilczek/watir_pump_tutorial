@@ -37,6 +37,10 @@ WatirPump internally uses [addressable](https://github.com/sporkmonger/addressab
 
 #### 1.5 Inheritance
 
+Parts that are common to several pages can be extracted to a shared base page and inherited.
+
+Example specs to be added in the future.
+
 ### 2. Elements
 
 #### 2.1 Locate using Watir methods
