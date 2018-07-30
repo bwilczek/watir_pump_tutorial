@@ -81,6 +81,8 @@ Example specs to be added in the future.
 
 #### 3.1 Fill in the form
 
+[see the spec](3.1_fill_form_spec.rb)
+
 #### 3.2 Fill in and submit the form
 
 #### 3.3 Read values from the page

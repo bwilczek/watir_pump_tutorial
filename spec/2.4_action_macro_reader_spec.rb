@@ -3,7 +3,7 @@
 class IndexPage2_4 < WatirPump::Page
   uri '/index.html'
 
-  # For certain cases, when the only thing that text logic needs to to with an element
+  # For certain cases, when the only thing that test logic needs to do with an element
   # is to read its content it is more efficient to declare an element reader
   # instead of an element
   h1_reader :header

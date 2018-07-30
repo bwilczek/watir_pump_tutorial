@@ -6,7 +6,7 @@ class GreeterPage2_5 < WatirPump::Page
   text_field :name, id: 'name'
 
   # `clicker` macro is smilar to `reader`. If for given element the only action
-  # that makes sense from the perspective of test logic is clicking then an elemet `clicker`
+  # that makes sense from the perspective of test logic is clicking, then an elemet `clicker`
   # should be declared instead of an element.
   button_clicker :set, id: 'set_name'
 
