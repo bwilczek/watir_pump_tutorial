@@ -45,7 +45,9 @@ WatirPump internally uses [addressable](https://github.com/sporkmonger/addressab
 
 #### 2.2 Locate using a lambda expression
 
-[see the spec](spec/2.2_locate_using_lambda_spec.rb)
+There are two ways of addressing elements with a lambda:
+ 1. using element type specific Watir methods [see the spec](spec/2.2.1_locate_using_lambda_spec.rb)
+ 1. using element type agnostic `element` method [see the spec](spec/2.2.2_locate_using_element_method.rb)
 
 #### 2.3 Collection of elements
 
