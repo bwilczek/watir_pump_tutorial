@@ -69,7 +69,13 @@ Example specs to be added in the future.
 
 #### 2.6 Action macros: writer
 
+[see the spec](spec/2.6_action_macro_writer_spec.rb)
+
 #### 2.7 `query` class macro
+
+Use it as a shorthand for instance method creation. Parameters are accepted and no validation of returned value is performed.
+
+Example specs to be added in the future.
 
 ### 3. Forms
 
