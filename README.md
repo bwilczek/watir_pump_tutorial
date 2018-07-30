@@ -57,6 +57,8 @@ There are two ways of addressing elements with a lambda:
 
 #### 2.4 Action macros: reader
 
+[see the spec](spec/2.4_action_macro_reader_spec.rb)
+
 #### 2.5 Action macros: clicker
 
 #### 2.6 Action macros: writer
