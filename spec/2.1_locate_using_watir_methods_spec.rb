@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GreeterPage < WatirPump::Page
+class GreeterPage2_1 < WatirPump::Page
   uri '/greeter.html'
 
   # Each element declaration consists of 3 parts:
@@ -20,16 +20,16 @@ class GreeterPage < WatirPump::Page
   div :greeting, id: 'greeting'
 end
 
-RSpec.describe GreeterPage do
+RSpec.describe GreeterPage2_1 do
   it 'returns the right types' do
-    GreeterPage.open do
+    GreeterPage2_1.open do
       expect(name).to eq root.text_field(id: 'name')
       expect(name).to be_a Watir::TextField
     end
   end
 
   it 'displays greeting' do
-    GreeterPage.open do
+    GreeterPage2_1.open do
       name.set 'Bogdan'
       set.click
       expect(greeting.text).to eq 'Hello Bogdan!'

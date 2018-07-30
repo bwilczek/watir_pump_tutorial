@@ -55,11 +55,17 @@ There are two ways of addressing elements with a lambda:
 
 #### 2.3 Collection of elements
 
+Works similarly as single elements. Use `watir` methods that return collections (e.g. `links`, `buttons`, etc.) to find out.
+
+Example specs to be added in the future.
+
 #### 2.4 Action macros: reader
 
 [see the spec](spec/2.4_action_macro_reader_spec.rb)
 
 #### 2.5 Action macros: clicker
+
+[see the spec](spec/2.5_action_macro_clicker_spec.rb)
 
 #### 2.6 Action macros: writer
 

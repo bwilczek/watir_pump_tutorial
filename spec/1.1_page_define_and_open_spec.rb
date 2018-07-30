@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Step 1: declare the class for page under test (index.html)
-class IndexPage < WatirPump::Page
+class IndexPage1_1 < WatirPump::Page
   # *REQUIRED*: URI of this page, relative to WatirPump.config.base_url
   uri '/index.html'
 
@@ -12,11 +12,11 @@ class IndexPage < WatirPump::Page
 end
 
 # Step 2: create a spec for it
-RSpec.describe IndexPage do
+RSpec.describe IndexPage1_1 do
   it 'displays header element' do
     # Once page class is defined use a class method `open` to interact with it.
     # The declared elements (here: `header`) are available in the block passed to `open`.
-    IndexPage.open do
+    IndexPage1_1.open do
       expect(header).to be_instance_of Watir::Heading
       expect(header.text).to eq 'Welcome to WatirPump tutorial'
     end
@@ -28,7 +28,7 @@ RSpec.describe IndexPage do
   # For Pages root always points to `browser` reference.
   # In the following chapters, when Components are introduced, this term will gain more significance.
   it 'demonstrates Page instance API' do
-    IndexPage.open do
+    IndexPage1_1.open do
       # self.browser is a reference to Watir::Browser instance assosciated with current session.
       # @see https://www.rubydoc.info/gems/watir/Watir/Browser
       expect(browser).to be_instance_of Watir::Browser

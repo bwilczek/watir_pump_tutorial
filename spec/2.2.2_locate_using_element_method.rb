@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GreeterPage < WatirPump::Page
+class GreeterPage2_2_2 < WatirPump::Page
   uri '/greeter.html'
 
   # `element` macro acts similarly as macros specific to certain Watir methods
@@ -16,9 +16,9 @@ class GreeterPage < WatirPump::Page
   element :not_an_element, -> { greeting.span.text }
 end
 
-RSpec.describe GreeterPage do
+RSpec.describe GreeterPage2_2_2 do
   it 'displays greeting' do
-    GreeterPage.open do
+    GreeterPage2_2_2.open do
       expect(name).to be_a(Watir::TextField)
       name.set 'Bogdan'
 

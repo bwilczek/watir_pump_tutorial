@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GreeterPage < WatirPump::Page
+class GreeterPage2_2_1 < WatirPump::Page
   uri '/greeter.html'
 
   # This notation can be considered a shorthand for a regular method declaration
@@ -34,9 +34,9 @@ class GreeterPage < WatirPump::Page
   # There is no way to achieve this behavior without lambdas
 end
 
-RSpec.describe GreeterPage do
+RSpec.describe GreeterPage2_2_1 do
   it 'displays greeting' do
-    GreeterPage.open do
+    GreeterPage2_2_1.open do
       expect(name).to be_a(Watir::TextField)
       name.set 'Bogdan'
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class IndexPage < WatirPump::Page
+class IndexPage1_3 < WatirPump::Page
   uri '/index.html'
   link :slow_greeter_link, href: 'greeter.html?random_delay=1'
 end
@@ -26,7 +26,7 @@ end
 
 RSpec.describe 'Navigation with links' do
   it 'finds empty header on an incomplete page' do
-    IndexPage.open { slow_greeter_link.click }
+    IndexPage1_3.open { slow_greeter_link.click }
 
     # Default implementation of `loaded?` is used below.
     # Reports page as loaded before all XHR calls are processed.
@@ -34,7 +34,7 @@ RSpec.describe 'Navigation with links' do
   end
 
   it 'finds proper header on a complete page' do
-    IndexPage.open { slow_greeter_link.click }
+    IndexPage1_3.open { slow_greeter_link.click }
 
     # Custom implementation of `loaded?` is used below.
     # Reports page as loaded when criteria explicity stated in `loaded?` method are met.

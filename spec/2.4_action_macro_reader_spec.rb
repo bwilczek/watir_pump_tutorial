@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class IndexPage < WatirPump::Page
+class IndexPage2_4 < WatirPump::Page
   uri '/index.html'
 
   # For certain cases, when the only thing that text logic needs to to with an element
@@ -14,9 +14,9 @@ class IndexPage < WatirPump::Page
 end
 
 # Step 2: create a spec for it
-RSpec.describe IndexPage do
+RSpec.describe IndexPage2_4 do
   it 'displays header element' do
-    IndexPage.open do
+    IndexPage2_4.open do
       expect(header).to be_a(String)
       expect(header).to eq 'Welcome to WatirPump tutorial'
 
