@@ -9,7 +9,7 @@ RSpec.configure do |config|
   end
 
   config.before(:suite) do
-    Watir.default_timeout = 5
+    Watir.default_timeout = 3
     SinatraHelper.start
     WatirPump.configure do |c|
       c.browser = Watir::Browser.new

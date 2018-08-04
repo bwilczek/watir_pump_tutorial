@@ -1,5 +1,3 @@
-# WORK IN PROGRESS - NOTHING TO SEE HERE YET
-
 ## Page Object pattern with `WatirPump`: how to create and run tests
 
 The goal of this repo is to familiarize web developers with features of `WatirPump` -
@@ -95,6 +93,12 @@ Example specs to be added in the future.
 
 #### 4.1 Define a component class and locate it on a page
 
+[see the spec](spec/4.1_component_definition_spec.rb)
+
 #### 4.2 Nesting
 
+[see the spec](spec/4.2_component_nesting_spec.rb)
+
 #### 4.3 Collection of components
+
+[see the spec](spec/4.3_component_collection_spec.rb)
