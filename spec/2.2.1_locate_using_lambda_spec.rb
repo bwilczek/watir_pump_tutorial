@@ -49,7 +49,7 @@ RSpec.describe GreeterPage2_2_1 do
       expect(greeted_name).to be_a(Watir::Span)
       expect(greeted_name.text).to eq 'Bogdan'
 
-      expect { not_a_button }.to raise_error(/Watir::TextField class does not match expected: button/)
+      expect { not_a_button }.to raise_error(WatirPump::Errors::ElementMismatch)
     end
   end
 end
