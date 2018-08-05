@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Let's extract the ToDo list item into a sub-component
+# and add support for the item removal
 class ToDoListItem4_2 < WatirPump::Component
   span_reader :label, role: 'name'
 
@@ -12,13 +14,12 @@ end
 class ToDoList4_2 < WatirPump::Component
   text_field_writer :item_name, role: 'new_item'
 
-  # This shortcut won't work because of the network delay:
-  #  button_clicker :submit, role: 'add'
-  # A real `submit` method will be required
-
   components :items, ToDoListItem4_2, :lis
   query :values, -> { items.map(&:label) }
 
+  # The shortcut in the line below won't work because of the network delay:
+  #  button_clicker :submit, role: 'add'
+  # A real `submit` method will be required
   def submit
     cnt_before = values.count
     root.button(role: 'add').click
