@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
+# Page under test: todo_lists.html
+
+# ToDoListItem class: same as in previous example, but without network delays
 class ToDoListItem4_3 < WatirPump::Component
   span_reader :label, role: 'name'
   link_clicker :remove, role: 'rm'
 end
 
+# ToDoList class: same as in previous example, but without network delays
 class ToDoList4_3 <  WatirPump::Component
   div_reader :title, role: 'title'
   text_field_writer :item_name, role: 'new_item'
@@ -17,6 +21,8 @@ class ToDoList4_3 <  WatirPump::Component
   end
 end
 
+# A decorator class for the collection of components declared in the Page class below.
+# Adds [] "operator" to allow access to individual ToDoList by its title
 class CollectionIndexedByTitle4_3 < WatirPump::ComponentCollection
   def [](title)
     find { |l| l.title == title }
@@ -26,13 +32,22 @@ end
 class ToDoListPage4_3 < WatirPump::Page
   uri '/todo_lists.html'
 
+  # Collection of components, this time located by a lambda
   components :todo_lists, ToDoList4_3, -> { root.divs(role: 'todo_list') }
+
+  # Use `decorate` to wrap given method (here: `todo_lists`) with a decorator class
+  #   that will add provide additional features of the object returned initially.
+  #   Here the decorator class `CollectionIndexedByTitle4_3` modified behavior of [] operator.
   decorate :todo_lists, CollectionIndexedByTitle4_3
 end
 
 RSpec.describe ToDoListPage4_3 do
   it 'fills the form' do
     ToDoListPage4_3.open do
+      # There are three ToDoLists on the page.
+      # The collection can be accessed through `todo_lists` method.
+      # Thanks to decoration they can be accessed by the list title, instead of integer array index.
+
       todo_lists['Groceries'].fill_form!(item_name: 'Pineapple')
       expect(todo_lists['Groceries'].values).to include 'Pineapple'
 

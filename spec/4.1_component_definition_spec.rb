@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Page under test: todo_list.html
+
 # Let's extract the functionality of the ToDo list into a component
 # so that in could be reused on multiple pages. Or even used multiple times on the same page.
 class ToDoList4_1 < WatirPump::Component
