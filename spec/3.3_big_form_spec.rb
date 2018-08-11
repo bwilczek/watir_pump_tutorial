@@ -26,21 +26,22 @@ class FormPage3_3 < WatirPump::Page
 
   # It happens quite often that the expected value for given key is either
   #  - spread across multiple HTML elements
-  #  - require some extra processing
+  #  - requires some extra processing
   # In such case `custom_readers` come handy. They can be declared in two ways
   #
   # 1. only declare that method with given name is a custom reader.
-  #   It's body has to be  defined later in the code
+  #   Its body has to be  defined later in the code
   custom_reader :ingredients
   custom_reader :hobbies
-  # query helper is a convenient way to generate one-liner methods
+  # `query` helper is a convenient way to generate one-liner methods
   query :hobbies, -> { split_span('res_hobbies') }
 
-  # 2. One-liner readers can be declared inline with a lambda
+  # 2. One-liner readers can be also declared inline with a lambda
   custom_reader :continents, -> { split_span('res_continents') }
   # NOTE: `custom_writers` are supported as well, however they are not needed as often as readers
   # custom_writer method names must end with `=` sign.
 
+  # `submit` method to make `fill_form!` happy
   button_clicker :submit, id: 'generate'
 
   # A support method that turns string (coma separated) content of a span element of provided ID

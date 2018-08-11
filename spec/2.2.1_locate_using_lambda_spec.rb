@@ -7,9 +7,9 @@ class GreeterPage2_2_1 < WatirPump::Page
   text_field :name, -> { root.text_field(id: 'name') }
   # The line above is equivalent to this pseudocode:
   #   def name
-  #     element = root.text_field(id: 'name')
   #     # whatever is inside the body of the lambda comes here
-  #     raise 'some message' unless element.is_a? TextField
+  #     element = root.text_field(id: 'name')
+  #     raise unless element.is_a? TextField
   #     element
   #   end
 
@@ -18,7 +18,7 @@ class GreeterPage2_2_1 < WatirPump::Page
   # The line above is equivalent to the following pseudocode:
   #   def set(id)
   #     element = root.button(id: id)
-  #     raise 'some message' unless element.is_a? Button
+  #     raise unless element.is_a? Button
   #     element
   #   end
 
@@ -29,9 +29,9 @@ class GreeterPage2_2_1 < WatirPump::Page
   # Let's add a 'regularly' located element
   div :greeting, id: 'greeting'
 
-  # Elemtents located with lambdas can refer to other elements
+  # Elements located with lambdas can refer to other elements
   span :greeted_name, -> { greeting.span }
-  # There is no way to achieve this behavior without lambdas
+  # There is no way to achieve this behavior with watir methods and locator hashes
 end
 
 RSpec.describe GreeterPage2_2_1 do

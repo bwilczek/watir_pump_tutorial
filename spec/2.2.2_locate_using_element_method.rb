@@ -31,7 +31,7 @@ RSpec.describe GreeterPage2_2_2 do
       expect(greeted_name).to be_a(Watir::Span)
       expect(greeted_name.text).to eq 'Bogdan'
 
-      expect { not_an_element }.to raise_error(/element method did not return a Watir::Element/)
+      expect { not_an_element }.to raise_error(WatirPump::Errors::ElementMismatch)
     end
   end
 end

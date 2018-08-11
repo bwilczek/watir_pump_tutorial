@@ -7,8 +7,8 @@ Each one consists of a brief description and an example test (`rspec`).
 
 The examples use static HTML pages that can be found in `docs` directory.
 They are being served through GitHub Pages under [this link](https://bwilczek.github.io/watir_pump_tutorial/).
-For the sake of local `rspec` execution `sinatra` server is being spin up to
-serves these pages faster and without the necessity of being online.
+For the sake of local `rspec` execution a `sinatra` server is being spin up to
+serve these pages faster and without the necessity of being online.
 
 Please refer to WatirPump's [README](https://github.com/bwilczek/watir_pump)
 for more comprehensive documentation on the API.

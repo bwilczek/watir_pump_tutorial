@@ -21,6 +21,7 @@ RSpec.describe 'Navigation with links' do
     IndexPage1_2.open { greeter_link.click }
 
     # Unlike `open`, `use` method does not navigate to given page.
+    # It expects that the navigation was initiated before.
     # It does check if the page is loaded though.
     GreeterPage1_2.use { expect(header.text).to include 'Greeter' }
   end

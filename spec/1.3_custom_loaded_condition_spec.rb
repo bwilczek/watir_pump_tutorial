@@ -5,7 +5,7 @@ class IndexPage1_3 < WatirPump::Page
   link :slow_greeter_link, href: 'greeter.html?random_delay=1'
 end
 
-# This greeter page shows it's content after a random delay.
+# This greeter page shows its content after a random delay.
 # `header` will not be displayed at once, although the HTML is loaded.
 # One can consider that `header` is loaded using another request (XHR).
 class SlowGreeterPage < WatirPump::Page

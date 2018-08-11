@@ -11,7 +11,7 @@ class ToDoListPage3_1 < WatirPump::Page
   # `query` macro is a shorthand for a quick method definition
   query :values, -> { root.ul.spans(role: 'name').map(&:text) }
   # The line above is the equivalent of:
-  # def value
+  # def values
   #   root.ul.spans(role: 'name').map(&:text)
   # end
 end

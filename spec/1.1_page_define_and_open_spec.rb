@@ -15,7 +15,8 @@ end
 RSpec.describe IndexPage1_1 do
   it 'displays header element' do
     # Once page class is defined use a class method `open` to interact with it.
-    # The declared elements (here: `header`) are available in the block passed to `open`.
+    # The declared elements (here: `header`) are available as methods in the block passed to `open`.
+    # By default this block is evaluated in the scope of Page instance (`self` refers to Page instance).
     IndexPage1_1.open do
       expect(header).to be_instance_of Watir::Heading
       expect(header.text).to eq 'Welcome to WatirPump tutorial'
@@ -41,8 +42,8 @@ RSpec.describe IndexPage1_1 do
       expect(root.h1).to eq header
       expect(browser.body.h1).to eq header
 
-      # loaded? is always truthy here: this block would not execute if page was not loaded.
-      # See chapter 1.3 to learn how to create custom criteria for page being loaded.
+      # loaded? is always truthy here: this block would not have executed if page was not loaded.
+      # See chapter 1.3 to learn how to create custom criteria for declaring page as loaded.
       expect(loaded?).to be_truthy
     end
   end

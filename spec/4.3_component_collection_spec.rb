@@ -22,7 +22,7 @@ class ToDoList4_3 <  WatirPump::Component
 end
 
 # A decorator class for the collection of components declared in the Page class below.
-# Adds [] "operator" to allow access to individual ToDoList by its title
+# Adds [] "operator" to allow access to an individual ToDoList by its title
 class CollectionIndexedByTitle4_3 < WatirPump::ComponentCollection
   def [](title)
     find { |l| l.title == title }
@@ -36,8 +36,8 @@ class ToDoListPage4_3 < WatirPump::Page
   components :todo_lists, ToDoList4_3, -> { root.divs(role: 'todo_list') }
 
   # Use `decorate` to wrap given method (here: `todo_lists`) with a decorator class
-  #   that will add provide additional features of the object returned initially.
-  #   Here the decorator class `CollectionIndexedByTitle4_3` modified behavior of [] operator.
+  #   that will provide some additional features to the object returned initially.
+  #   Here the decorator class `CollectionIndexedByTitle4_3` modifies behavior of [] operator.
   decorate :todo_lists, CollectionIndexedByTitle4_3
 end
 
@@ -56,6 +56,8 @@ RSpec.describe ToDoListPage4_3 do
 
       todo_lists['Groceries']['Bread'].remove
       expect(todo_lists['Groceries'].values).not_to include 'Bread'
+
+      # @see example 4.4 for even more elegant API
     end
   end
 end

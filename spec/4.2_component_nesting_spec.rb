@@ -28,7 +28,7 @@ class ToDoList4_2 < WatirPump::Component
   query :values, -> { items.map(&:label) }
 
   # The shortcut in the line below won't work because of the network delay:
-  #  button_clicker :submit, role: 'add'
+  #   button_clicker :submit, role: 'add' # this won't work
   # A real `submit` method will be required
   def submit
     cnt_before = values.count
