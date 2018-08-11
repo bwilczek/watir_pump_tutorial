@@ -9,6 +9,7 @@ class FormPage3_3 < WatirPump::Page
   textarea_writer :description, -> { root.textarea(id: 'description') }
   radio_writer :gender, name: 'gender'
   radio_writer :predicate, name: 'predicate'
+  flag_writer :confirmed, name: 'confirmation'
   checkbox_writer :hobbies, name: 'hobbies[]'
   checkbox_writer :continents, name: 'continents[]'
   select_writer :car, name: 'car'
@@ -35,6 +36,7 @@ class FormPage3_3 < WatirPump::Page
   custom_reader :hobbies
   # `query` helper is a convenient way to generate one-liner methods
   query :hobbies, -> { split_span('res_hobbies') }
+  custom_reader :confirmed, -> { root.span(id: 'res_confirmation').text == 'YES' }
 
   # 2. One-liner readers can be also declared inline with a lambda
   custom_reader :continents, -> { split_span('res_continents') }
@@ -61,6 +63,7 @@ RSpec.describe FormPage3_3 do
       description: 'I like pie. And cookies.',
       gender: 'Female',
       predicate: 'No',
+      confirmed: true,
       hobbies: %w[Gardening Dancing],
       continents: %w[Asia Africa],
       car: 'Opel',
