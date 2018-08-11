@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="us">
+<head>
+  <meta charset="utf-8">
+  <title>Fancy UI</title>
+  <link href="jquery-ui.min.css" rel="stylesheet" />
+  <link href="jquery-ui.structure.min.css" rel="stylesheet" />
+  <link href="jquery-ui.theme.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <a href="index.html">index page</a>
+  <hr />
+
+  <div class="ui-widget">
+    <label for="tags">Languages: </label>
+    <input id="tags">
+  </div>
+  <div id="tag_list">Ruby</div>
+
+  <br class="clearBoth" />
+
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
+  <script src="app.js"></script>
+  <script>
+  $( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $("#tags").autocomplete({
+      source: availableTags,
+      select: function( event, ui ) {
+        $('#tag_list').html($('#tag_list').html() + ', ' + ui.item.label);
+        $('#tags').val('');
+        // this.close();
+        return false;
+      }
+    });
+  } );
+  </script>
+</body>
+</html>
