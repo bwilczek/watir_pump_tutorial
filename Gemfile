@@ -6,4 +6,6 @@ gem 'pry', '~> 0.11'
 gem 'rspec', '~> 3.7'
 gem 'rubocop', '~> 0.58'
 gem 'sinatra', '~> 2.0', '>= 2.0.3'
-gem 'watir_pump', '0.3.9'
+gem 'watir', '6.14'
+gem 'watir_pump', '0.4.6'
+
